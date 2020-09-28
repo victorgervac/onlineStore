@@ -2,7 +2,7 @@
 
 ## steps to setup
 
-\$ git clone git@github.com:jimibue/react-rails-router-starter-f20.git <project-name>
+\$ git clone git@github.com:jimibue/react-rails-router-starter-f20.git `project-name`
 
 \$ cd project-name
 
