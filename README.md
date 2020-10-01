@@ -1,4 +1,4 @@
-# Starter Proj
+# Starter Proj w/ Auth
 
 ## steps to setup
 
