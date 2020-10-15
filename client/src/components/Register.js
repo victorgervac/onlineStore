@@ -1,28 +1,58 @@
 import React, { useState, useContext } from "react";
-import { Button, Form, Segment } from "semantic-ui-react";
+import { Button, Form, Label, Segment } from "semantic-ui-react";
 import { useFormInput } from "../customHooks/useFormInput";
+import { AuthContext } from "../providers/AuthProvider";
+import { useHistory } from "react-router-dom"
 
 const Register = (props) => {
-  const email = useFormInput("", "E-mail");
-  const password = useFormInput("", "Password");
-  const passwordConfirmation = useFormInput("", "Password Confirmation");
+  const email = useFormInput("test@test.com", "E-mail");
+  const password = useFormInput("123456", "Password");
+  const passwordConfirmation = useFormInput("123456", "Password Confirmation");
+
+  const { handleRegister } = useContext(AuthContext);
+  const history = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email);
+    if (password.value !== passwordConfirmation.value) {
+      alert("Passwords do not match");
+    } else {
+      handleRegister({
+        email: email.value,
+        password: password.value,
+        passwordConfirmation: passwordConfirmation.value,
+      },
+      history 
+      );
+    }
   };
+
   return (
     <div>
       <h1>Register</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input {...email} />
+      <Form onSubmit={handleSubmit}>
+        <div>
+          <Label color="blue" ribbon>
+            E-MAIL
+          </Label>
+          <Form.Input autoFocus {...email} />
+        </div>
         <br />
-        <input {...password} />
+        <Label color="blue" ribbon>
+          PASSWORD
+        </Label>
+        <Form.Input type="password" {...password} />
         <br />
-        <input {...passwordConfirmation} />
+        <Label color="blue" ribbon>
+          PASSWORD CONFIRMATION
+        </Label>
+        <Form.Input type="password" {...passwordConfirmation} />
         <br />
-        <button type="submit">Register</button>
-      </form>
+        <Button color="green" type="submit">
+          Register
+        </Button>
+      </Form>
     </div>
   );
 };
