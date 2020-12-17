@@ -1,5 +1,6 @@
 import React from "react";
-
-const Home = () => <div> Home</div>;
+import Items from "../Shop/Items"
+const Home = () => {return<div>Store Home</div>
+};
 
 export default Home;

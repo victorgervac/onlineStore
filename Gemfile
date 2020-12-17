@@ -34,9 +34,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 gem "better_errors"
- gem "binding_of_caller"
- gem "pry-rails"
- gem 'prettier'
+gem "binding_of_caller"
+gem "pry-rails"
+gem 'prettier'
 
 group :development do
   gem 'listen', '~> 3.2'

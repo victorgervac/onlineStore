@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { Icon } from "semantic-ui-react"
 // import styled from "styled-components";
 // For Basic setup only please change
 
@@ -38,7 +39,7 @@ const NavBar = () => {
   return (
     <div style={styles.navbar}>
       <div>
-        <Link to="/">Home</Link>
+        <Link to="/"><Icon name='home'/></Link>
         <span style={{ marginRight: "10px" }}></span>
         {user && <Link to="/thingsDemo">Things</Link>}
       </div>

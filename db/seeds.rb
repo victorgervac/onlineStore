@@ -11,3 +11,10 @@ Thing.destroy_all
 5.times do |i|
   Thing.create(name: Faker::Name.name)
 end
+5.times do 
+  Item:wq.create(
+    name: Faker::Commerce.product_name,
+    price: Faker::Commerce.price.to_f,
+  )
+end
+puts "worked"

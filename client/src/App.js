@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import FetchUser from "./components/FetchUser";
 import { Container } from "semantic-ui-react";
+import Items from "./Shop/Items";
 function App() {
   return (
     <>
@@ -16,10 +17,11 @@ function App() {
       <Container>
         <NavBar />
         <Switch>
-          <ProtectedRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Register" component={Register} />
           <Route exact path="/ThingsDemo" component={ThingsDemo} />
+          <Route exact path="/items" component={Items}/>
           <Route component={NoMatch} />
         </Switch>
       </Container>
