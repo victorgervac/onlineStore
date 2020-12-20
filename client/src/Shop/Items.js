@@ -1,6 +1,6 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react" 
-import { Card, Message} from "semantic-ui-react"
+import { Card, Message, Icon} from "semantic-ui-react"
 
 
 const Items =()=>{
@@ -10,6 +10,7 @@ const Items =()=>{
         Axios.get("/items/index")
         .then((res)=>{
             setItems(res.data);
+            console.log("data",res.data);
         })
     
         .catch((err)=>{
@@ -18,18 +19,18 @@ const Items =()=>{
     },[])
 
     const renderItems = () => {
-       if(items.length <= 0 ){
-           return <Message negative>
-                    <Message.Header>We're sorry we are sold out</Message.Header>
-                  </Message>;
-        return items.map((item)=>(
-            <Card></Card>
-        ))
-       }
+        if (items.length <= 0) return <h2>Sold Out</h2>;
+            return items.map((item) => (
+                <Card>
+                    <Card.Content header={item.name} />
+                    <Card.Content extra>
+                    <Icon name='dollar sign'/>{item.price}
+                    </Card.Content>
+                </Card>
+            ));
     }
     return (
-        
-        <h1>Items go here</h1>
+        <Card.Group>{renderItems()}</Card.Group>
     )
 }
 export default Items 

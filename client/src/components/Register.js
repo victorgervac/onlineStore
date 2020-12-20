@@ -5,9 +5,9 @@ import { AuthContext } from "../providers/AuthProvider";
 import { useHistory } from "react-router-dom"
 
 const Register = (props) => {
-  const email = useFormInput("test@test.com", "E-mail");
-  const password = useFormInput("123456", "Password");
-  const passwordConfirmation = useFormInput("123456", "Password Confirmation");
+  const email = useFormInput("", "E-mail");
+  const password = useFormInput("", "Password");
+  const passwordConfirmation = useFormInput("", "Password Confirmation");
 
   const { handleRegister } = useContext(AuthContext);
   const history = useHistory();
