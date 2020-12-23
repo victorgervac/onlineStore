@@ -1,6 +1,6 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react" 
-import { Card, Message, Icon} from "semantic-ui-react"
+import { Card, Message, Icon, Button} from "semantic-ui-react"
 
 
 const Items =()=>{
@@ -24,13 +24,24 @@ const Items =()=>{
                 <Card>
                     <Card.Content header={item.name} />
                     <Card.Content extra>
+                    <Button animated='vertical'>
+                        <Button.Content hidden>Add to Cart</Button.Content>
+                        <Button.Content visible>
+                        <Icon name='shop' />
+                        </Button.Content>
+                    </Button>
+                    <span style={{ marginRight: "10px" }}></span>
                     <Icon name='dollar sign'/>{item.price}
+                    
                     </Card.Content>
                 </Card>
             ));
     }
     return (
-        <Card.Group>{renderItems()}</Card.Group>
+        <div>
+            <h1>Disruptor Store</h1>
+            <Card.Group>{renderItems()}</Card.Group>
+        </div>
     )
 }
 export default Items 
