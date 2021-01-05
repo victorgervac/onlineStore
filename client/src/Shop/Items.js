@@ -30,7 +30,7 @@ const Items =()=>{
                         <Icon name='shop' />
                         </Button.Content>
                     </Button>
-                    <span style={{ marginRight: "10px" }}></span>
+                    <span style={{ marginRight: "15px" }}></span>
                     <Icon name='dollar sign'/>{item.price}
                     
                     </Card.Content>

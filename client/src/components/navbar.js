@@ -21,7 +21,7 @@ const NavBar = () => {
             onClick={() => handleLogout(history)}
             style={{ color: "steelblue" }}
           >
-            logout!
+            logout
           </div>
         </>
       );
