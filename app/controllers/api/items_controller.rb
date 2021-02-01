@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class Api::ItemsController < ApplicationController
   before_action :set_item,  only: [:update,:destroy] 
   # before_action :authenticate_user!
   before_action :admin_only, only: [:update, :create, :destroy]

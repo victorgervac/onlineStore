@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react"
 import { Card, Message, Icon, Button} from "semantic-ui-react"
 
 
-const Items =()=>{
+const Items =(props)=>{
     const [items, setItems] = useState(([]));
 
     useEffect (()=>{
-        Axios.get("/items/index")
+        Axios.get("/api/items")
         .then((res)=>{
             setItems(res.data);
             console.log("data",res.data);
@@ -17,6 +17,12 @@ const Items =()=>{
             alert("Error: could not find Items")
         })
     },[])
+
+    //    const deleteItem = async () =>{
+    //        try{
+    //            const res = await 
+    //        }
+    //    }
 
     const renderItems = () => {
         if (items.length <= 0) return <h2>Sold Out</h2>;
