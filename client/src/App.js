@@ -13,7 +13,7 @@ import Items from "./Shop/Items";
 function App() {
   return (
     <>
-    <FetchUser>
+    {/* <FetchUser> */}
       <Container>
         <NavBar />
         <Switch>
@@ -25,7 +25,7 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </Container>
-    </FetchUser>
+    {/* </FetchUser> */}
     </>
   );
 }
